@@ -17,13 +17,6 @@ export class QuizpageComponent implements OnInit {
   scoreCorrect: number = 0;
   scoreIncorrect: number = 0;
 
-  toastType = '';
-  toastTitle = '';
-  message = '';
-  showToast = false;
-  progressPosition = 'bottom';
-  time = 0;
-
   constructor(private questionsService: QuestionsService, private toast: NgToastService) { }
 
   ngOnInit(): void {
