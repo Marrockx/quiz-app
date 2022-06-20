@@ -1,0 +1,39 @@
+<div class="ui center aligned container wrap">
+    <h1 class="ui header big">Simple Addition Calculator</h1>
+    <div class="ui grid row result-display">
+        <p class="count">Correct: <span style="color: green;">{{scoreCorrect}}</span></p>
+        <p class="count">Incorrect: <span style="color: red;"> {{scoreIncorrect}}</span></p>
+    </div>
+    <div class="ui grid quiz-layout">
+        <div class="ui row">
+            <div class="ui question-card">
+
+                <div #firstNumber>{{firstNum}}</div>
+                +
+                <div #secondNumber>{{secondNum}}</div>
+                =
+            </div>
+            <form class="ui form quiz-form" [formGroup]="quizAnswer"
+                (keydown.enter)="checkAnswer(firstNum, secondNum, quizAnswer.controls['answer'].value);" novalidate>
+                <div class="ui field" #answerInput>
+                    <input type="text" formControlName="answer" autofocus>
+
+                </div>
+
+            </form>
+
+        </div>
+        <div class="ui field btn-field">
+            <button class="ui massive solid button submit" type="submit"
+                [disabled]="quizAnswer.invalid || quizAnswer.get('answer')?.value =='' "
+                (click)="checkAnswer(firstNum, secondNum, quizAnswer.controls['answer'].value);">Enter</button>
+        </div>
+
+    </div>
+    <fui-toast [class]="toastType" *ngIf="showToast" [showProgress]="progressPosition" [displayTime]="time"
+        [closeIcon]="true">
+        <ng-template fuiToastTitle="">{{toastTitle}}</ng-template>
+        <ng-template fuiToastMessage>{{message}}</ng-template>
+    </fui-toast>
+
+</div>

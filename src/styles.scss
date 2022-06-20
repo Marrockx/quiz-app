@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+$bg-color: #fff6f0;
+$dark-color: #55433c;
+$accent-color: #ff9671;
+$primary-color: #b98572;
+$secondary-color: #e5dbce;
+
+body {
+    background-color: $bg-color;
+}

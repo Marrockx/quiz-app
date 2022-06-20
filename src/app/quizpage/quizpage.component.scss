@@ -1,0 +1,138 @@
+@import "../../styles.scss";
+
+.container.wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Avenir;
+    background-color: $bg-color;
+
+    & .ui.header {
+        font-size: 2.4rem;
+        margin-bottom: 4.8rem;
+        color: $primary-color;
+        text-align: center;
+    }
+
+    & .ui.grid.result-display {
+        font-size: 24px;
+        font-weight: 700;
+        color: $accent-color;
+    }
+
+    & .ui.grid.quiz-layout {
+        background-color: $bg-color;
+        margin: 4rem 2.4rem;
+        justify-content: center;
+
+        & .ui.row {
+            align-items: center;
+        }
+
+        & .ui.question-card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 0.2em;
+            font-size: 6rem;
+            color: $dark-color;
+            transition: all ease 3s;
+        }
+
+        & .ui.form {
+            display: flex;
+            align-items: center;
+            width: 40%;
+
+        }
+
+        & .ui.field.btn-field {
+            margin-top: 6rem;
+            transition: width ease 1s;
+            width: 75%;
+        }
+
+        & .ui.button.submit {
+            background-color: $accent-color;
+            color: #ffffff;
+            width: inherit;
+        }
+    }
+
+    & .ui.field input[type="text"] {
+        text-align: center;
+        font-size: 6rem;
+        padding: 1.2rem;
+        background-color: $secondary-color;
+        color: $dark-color;
+
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    .container.wrap {
+
+        .ui.grid.quiz-layout {
+
+            & .ui.form {
+                width: 50%;
+            }
+
+        }
+
+        & .ui.grid.quiz-layout .ui.question-card,
+        & .ui.field input[type="text"] {
+            font-size: 3.6rem
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container.wrap {
+
+        .ui.grid.quiz-layout {
+
+            & .ui.question-card {
+                margin-bottom: 2.4rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .ui.row.result-display {
+        flex-direction: column;
+    }
+
+    .container.wrap {
+
+        .ui.grid.quiz-layout {
+
+            & .ui.row {
+                // flex-direction: column;
+                //align-items: center;
+            }
+
+
+            & .ui.form {
+                width: 75%;
+            }
+
+            & .ui.field.btn-field {
+                transition: width ease 1s;
+                width: 100%;
+            }
+
+        }
+
+        & .ui.grid.quiz-layout .ui.question-card,
+        & .ui.field input[type="text"] {
+            font-size: 2.4rem
+        }
+    }
+}
